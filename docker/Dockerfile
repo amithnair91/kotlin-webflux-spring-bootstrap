@@ -5,7 +5,7 @@ COPY --chown=gradle:gradle build.gradle /home/gradle
 COPY --chown=gradle:gradle settings.gradle /home/gradle
 
 WORKDIR /home/gradle
-RUN gradle build
+RUN gradle --no-daemon build
 
 FROM openjdk:10-jre-slim
 EXPOSE 8080
