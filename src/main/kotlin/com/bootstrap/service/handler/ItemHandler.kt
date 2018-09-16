@@ -1,7 +1,7 @@
-package com.bootstrap.bootstrapservice.handler
+package com.bootstrap.service.handler
 
-import com.bootstrap.bootstrapservice.model.Item
-import com.bootstrap.bootstrapservice.repository.ItemRepository
+import com.bootstrap.service.model.Item
+import com.bootstrap.service.repository.ItemRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType.APPLICATION_JSON_UTF8
 import org.springframework.stereotype.Component

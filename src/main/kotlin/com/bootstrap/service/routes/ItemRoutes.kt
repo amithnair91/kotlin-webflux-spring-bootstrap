@@ -1,6 +1,6 @@
-package com.bootstrap.bootstrapservice.routes
+package com.bootstrap.service.routes
 
-import com.bootstrap.bootstrapservice.handler.ItemHandler
+import com.bootstrap.service.handler.ItemHandler
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType

@@ -1,4 +1,4 @@
-package com.bootstrap.bootstrapservice
+package com.bootstrap.service
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

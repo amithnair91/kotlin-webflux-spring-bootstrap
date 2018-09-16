@@ -1,4 +1,4 @@
-package com.bootstrap.bootstrapservice
+package com.bootstrap.service
 
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,6 +1,6 @@
-package com.bootstrap.bootstrapservice.repository
+package com.bootstrap.service.repository
 
-import com.bootstrap.bootstrapservice.model.Item
+import com.bootstrap.service.model.Item
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository
 import org.springframework.stereotype.Repository
 import reactor.core.publisher.Mono

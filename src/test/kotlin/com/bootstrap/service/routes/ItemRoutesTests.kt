@@ -1,7 +1,7 @@
-package com.bootstrap.bootstrapservice.routes
+package com.bootstrap.service.routes
 
-import com.bootstrap.bootstrapservice.model.Item
-import com.bootstrap.bootstrapservice.repository.ItemRepository
+import com.bootstrap.service.model.Item
+import com.bootstrap.service.repository.ItemRepository
 import io.kotlintest.Tags.Companion.Empty
 import io.kotlintest.shouldBe
 import io.kotlintest.shouldNotBe
