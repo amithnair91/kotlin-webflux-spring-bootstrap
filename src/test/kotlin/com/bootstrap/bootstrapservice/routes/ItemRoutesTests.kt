@@ -45,7 +45,7 @@ class ItemRoutesTests(@Autowired val client: WebTestClient, @Autowired val itemR
     }
 
     @Test
-    fun `get a metadata`() {
+    fun `get an item`() {
         itemRepository.save(Item("codeBook", "refactoring legacy code")).block()
 
         val result = client.get().uri("/api/item/codeBook").accept(APPLICATION_JSON)
@@ -71,7 +71,7 @@ class ItemRoutesTests(@Autowired val client: WebTestClient, @Autowired val itemR
         result[0].id shouldNotBe Empty
         result[0].name shouldBe "book"
         result[0].value shouldBe "harry potter"
-
+        
     }
 
 }
