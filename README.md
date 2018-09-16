@@ -1,1 +1,2 @@
 # kotlin-webflux-spring-bootstrap
+[![Build Status](https://travis-ci.org/amithnair91/kotlin-webflux-spring-bootstrap.svg?branch=master)](https://travis-ci.org/amithnair91/kotlin-webflux-spring-bootstrap)
