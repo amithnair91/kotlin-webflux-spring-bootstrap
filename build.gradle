@@ -21,7 +21,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.bootstrap'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = 10
 compileKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ["-Xjsr305=strict"]
@@ -36,13 +36,19 @@ compileTestKotlin {
 }
 
 test {
-    useJUnitPlatform()
-
-    // show standard out and standard error of the test JVM(s) on the console
-    testLogging.showStandardStreams = true
-
+  useJUnitPlatform()
+    failFast = true
     testLogging {
-        events "PASSED", "FAILED", "SKIPPED", "STANDARD_OUT", "STANDARD_ERROR"
+        events 'PASSED', 'FAILED', 'SKIPPED'
+    }
+    afterSuite { desc, result ->
+        if (!desc.parent) {
+            println "\nTest result: ${result.resultType}"
+            println "Test summary: ${result.testCount} tests, " +
+                    "${result.successfulTestCount} succeeded, " +
+                    "${result.failedTestCount} failed, " +
+                    "${result.skippedTestCount} skipped"
+        }
     }
 }
 
