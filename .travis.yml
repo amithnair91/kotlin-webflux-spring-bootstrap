@@ -1,0 +1,10 @@
+language: java
+
+jdk:
+- oraclejdk10
+
+services:
+- docker
+
+script:
+- make image
