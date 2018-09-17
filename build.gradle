@@ -1,10 +1,12 @@
 buildscript {
     ext {
-        kotlinVersion = '1.2.51'
-        springBootVersion = '2.0.5.RELEASE'
+        kotlinVersion = '1.2.61'
+        springBootVersion = '2.1.0.M3'
     }
     repositories {
         mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -107,10 +109,10 @@ task applicationCodeCoverageReport(type: JacocoReport) {
     sourceSets sourceSets.main
 }
 
-
-
 repositories {
     mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
 }
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
