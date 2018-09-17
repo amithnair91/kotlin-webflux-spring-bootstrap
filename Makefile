@@ -3,7 +3,7 @@ IMG_NAME := bootstrap-service
 
 .PHONY: build
 build:
-	@gradle build
+	@gradle clean build jacocoTestReport jacocoTestCoverageVerification
 
 .PHONY: image
 image:
