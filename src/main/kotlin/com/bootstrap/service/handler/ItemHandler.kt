@@ -21,7 +21,11 @@ class ItemHandler(@Autowired val repository: ItemRepository) {
     private fun json() = ok().contentType(APPLICATION_JSON_UTF8)
 
     fun findAll(request: ServerRequest): Mono<ServerResponse> {
-        logger.info("finding all")
+        logger.trace("A TRACE Message")
+        logger.debug("A DEBUG Message")
+        logger.info("An INFO Message")
+        logger.warn("A WARN Message")
+        logger.error("An ERROR Message")
        return  json().body(repository.findAll())
     }
 
