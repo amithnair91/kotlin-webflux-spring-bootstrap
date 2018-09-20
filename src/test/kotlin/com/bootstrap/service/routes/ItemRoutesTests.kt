@@ -22,12 +22,12 @@ import org.springframework.test.web.reactive.server.expectBodyList
 class ItemRoutesTests(@Autowired val client: WebTestClient, @Autowired val itemRepository: ItemRepository) {
 
     @BeforeEach
-    fun beforeEach(){
+    fun beforeEach() {
         itemRepository.deleteAll().block()
     }
 
-	@Test
-	fun `get all Items`() {
+    @Test
+    fun `get all Items`() {
         itemRepository.save(Item("book", "clean code")).block()
         itemRepository.save(Item("plant", "oak")).block()
 
@@ -58,7 +58,7 @@ class ItemRoutesTests(@Autowired val client: WebTestClient, @Autowired val itemR
     }
 
     @Test
-    fun `create Item`(){
+    fun `create Item`() {
         val result = client.post().uri("/api/item/")
                 .accept(APPLICATION_JSON).contentType(APPLICATION_JSON)
                 .syncBody(Item("book", "harry potter"))
@@ -71,7 +71,26 @@ class ItemRoutesTests(@Autowired val client: WebTestClient, @Autowired val itemR
         result[0].id shouldNotBe Empty
         result[0].name shouldBe "book"
         result[0].value shouldBe "harry potter"
-        
+
+    }
+
+    @Test
+    fun `findItem returns not found if item does not exist`() {
+        client.get()
+                .uri("/api/item/nonExistingItem")
+                .accept(APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isNotFound
+    }
+
+    @Test
+    fun `get all items returns noContent if empty`() {
+
+        client.get()
+                .uri("/api/item/")
+                .accept(APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isNoContent
     }
 
 }
