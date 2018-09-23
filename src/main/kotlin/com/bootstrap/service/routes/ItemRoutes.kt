@@ -20,5 +20,9 @@ class ItemRoutes (val handler: ItemHandler) {
                         POST("/", handler::create)
                     }
                 }
+                (accept(MediaType.APPLICATION_JSON) and "/encrypted")
+                        .nest {
+                    GET("/", handler::getEncryptedMessage)
+                }
             }
 }

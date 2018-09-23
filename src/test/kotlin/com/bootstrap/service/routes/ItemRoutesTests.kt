@@ -93,4 +93,18 @@ class ItemRoutesTests(@Autowired val client: WebTestClient, @Autowired val itemR
                 .expectStatus().isNoContent
     }
 
+    @Test
+    fun `get encrypted value`() {
+
+        val decryptedMessage = client.get()
+                .uri("/encrypted")
+                .accept(APPLICATION_JSON)
+                .exchange()
+                .expectStatus().is2xxSuccessful
+                .expectBody(String::class.java)
+                .returnResult().responseBody
+
+        decryptedMessage shouldBe "This is the encrypted super-secret message"
+    }
+
 }

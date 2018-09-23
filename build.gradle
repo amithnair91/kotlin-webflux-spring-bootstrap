@@ -121,11 +121,12 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")
     compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile ('org.jacoco:org.jacoco.report:0.8.2')
+    compile ('com.github.ulisesbocchio:jasypt-spring-boot-starter:1.16')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
     testCompile('io.projectreactor:reactor-test')
     testCompile('org.junit.jupiter:junit-jupiter-engine:5.2.0')
     testCompile('com.nhaarman:mockito-kotlin:1.6.0')
     testCompile('io.kotlintest:kotlintest-runner-junit5:3.1.6')
-    compile group: 'org.jacoco', name: 'org.jacoco.report', version: '0.8.2'
 }
