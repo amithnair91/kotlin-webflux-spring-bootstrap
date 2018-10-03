@@ -25,8 +25,4 @@
 /nbdist/
 /.nb-gradle/
 
-gradlew
-gradlew.bat
-gradle
-
 logs
